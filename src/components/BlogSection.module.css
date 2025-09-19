@@ -1,0 +1,116 @@
+.section {
+  padding: var(--spacing-5) var(--spacing-2);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--max-content-width);
+  display: grid;
+  gap: var(--spacing-4);
+  animation: fadeIn 0.9s ease both;
+}
+
+.header {
+  max-width: 700px;
+}
+
+.kicker {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-primary);
+}
+
+.header h2 {
+  margin: 0.5rem 0 0.75rem;
+  font-family: 'Poppins', 'Roboto', system-ui, sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.3rem);
+}
+
+.header p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-2);
+  animation: fadeInUp 1s ease both;
+}
+
+.card {
+  padding: var(--spacing-3);
+  border-radius: 20px;
+  background: var(--color-surface);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid rgba(31, 138, 112, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+}
+
+.card h3 {
+  margin: 0;
+  font-family: 'Poppins', 'Roboto', system-ui, sans-serif;
+  font-size: 1.3rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  background: rgba(31, 74, 161, 0.1);
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  background: var(--color-secondary);
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
