@@ -1,0 +1,83 @@
+.section {
+  padding: var(--spacing-5) var(--spacing-2);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--max-content-width);
+  display: grid;
+  gap: var(--spacing-4);
+  animation: fadeIn 0.9s ease both;
+}
+
+.intro {
+  max-width: 720px;
+}
+
+.kicker {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-secondary);
+}
+
+.intro h2 {
+  font-family: 'Poppins', 'Roboto', system-ui, sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  margin: 0.5rem 0 1rem;
+}
+
+.intro p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.values {
+  display: grid;
+  gap: var(--spacing-2);
+}
+
+.valueCard {
+  background: var(--color-surface);
+  border-radius: 20px;
+  padding: var(--spacing-3);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  display: grid;
+  gap: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valueCard:hover,
+.valueCard:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.1);
+}
+
+.valueCard h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-family: 'Poppins', 'Roboto', system-ui, sans-serif;
+}
+
+.valueCard p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .values {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
